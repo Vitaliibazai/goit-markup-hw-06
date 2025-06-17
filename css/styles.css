@@ -16,9 +16,10 @@ margin-bottom: 0;
 padding-left: 0;
 }
 .container{
-    width: 1158px;
-    padding-left: 15px;
-    padding-right: 15px;
+    max-width: 320px;
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
     margin: 0 auto;
 }
 .mail{
@@ -42,6 +43,8 @@ color: #4d5ae5;
 font-family: "Raleway", sans-serif;
 font-weight: 700;
 font-size: 18px;
+padding-top: 16px;
+padding-bottom: 16px;
 text-transform: uppercase;
 line-height: 1.17;
 letter-spacing: 0.03em;
@@ -64,7 +67,8 @@ transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     color: #404BBF;
 }
 .header-nav{
-   display: flex;
+   /* display: flex; */
+   display: none;
    gap: 40px;
    
 }
@@ -80,9 +84,120 @@ transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     margin-left: auto;
 }
 .contacts{
-    display: flex;
+    /* display: flex; */
+    display: none;
     gap: 40px;
     }
+.menu-open-btn{
+    border: none;
+    background-color: transparent;
+    margin-left: auto;
+    padding: 0;
+}
+.menu-icon{
+    fill: #2F2F37;
+}
+
+.mob-menu{
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    padding: 24px 24px 40px 16px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+}
+.menu-close-btn{
+    padding: 0;
+    position: absolute;
+    display: flex;
+    top: 24px;
+    right: 24px;
+    /* display: block;
+    margin-left: auto; */
+    background-color: transparent;
+    width: 24px;
+    height: 24px;
+    border: 1px solid rgba(0, 0, 0, 0.1); 
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    margin-bottom: 24px;
+}
+.mob-menu-studio{
+    color: #2E2F42;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    display: block;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mob-menu-studio:hover, .studio.current{
+    color: #404BBF;
+}
+.mob-menu-studio:focus{
+    color: #404BBF; 
+}
+.mob-menu-list{
+    margin-bottom: 50px;
+}
+.mob-menu-list:first-child{
+    margin-top: 24px;
+}
+.mob-menu-list:not(:last-child){
+margin-bottom: 40px;
+}
+.mob-menu-team-icon{
+    fill: #F4F4FD;
+}
+.mob-menu-team-logo{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #4D5AE5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mob-menu-team-icon-list{
+  display: flex;
+  gap: 40px;
+  margin-top: 48px;
+}
+.mob-menu-address{
+    margin-top: auto;
+}
+.mob-menu-mail{
+    color: #434455;
+    text-decoration: none;
+    font-family: "Roboto", normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    padding: 24px 0;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mob-menu-mail:hover{
+    color: #404BBF;
+}
+.mob-menu-mail:focus{
+    color: #404BBF;
+}
+.mob-menu-mail-list:not(:last-child){
+margin-bottom: 24px;
+}
 .studio{
     color: #2E2F42;
     font-size: 16px;
@@ -148,28 +263,36 @@ span{
 }
 img{
     display: block;
+    min-width: 100%;
+    height: auto;
 }
 .main-title{
     color: #FFFFFF;
-    font-size: 56px;
-    line-height: 1.07;
+    font-size: 36px;
+    line-height: 40px;
     letter-spacing: 0.02em;
     text-align: center;
-    max-width: 496px;
+    /* max-width: 496px; */
+    max-width: 216px;
     margin: 0 auto;
-    margin-bottom: 48px;
+    margin-bottom: 72px;
 }
 .main{
     padding-top: 188px;
     padding-bottom: 188px;
     background-color: #2E2F42;
-    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/office.jpg);
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/office-mob.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     max-width: 1440px;
     margin-left: auto;
     margin-right: auto;
+}
+@media screen and (min-resolution: 2x){
+    .main{
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/office-mob-2x.jpg);
+    }
 }
 .title{
     color: #2E2F42;
@@ -178,6 +301,7 @@ img{
     line-height: 1.2;
     letter-spacing: 0.02em;
     margin-bottom: 8px;
+    
     }
 .visually-hidden{
 position: absolute;
@@ -192,16 +316,20 @@ clip: rect(0 0 0 0);
 overflow: hidden;
 }
 .benefits{
-    padding-top: 120px;
-    padding-bottom: 120px;
+    /* padding-top: 120px;
+    padding-bottom: 120px; */
+    padding-top: 96px;
+    padding-bottom: 96px;
 }
 .benefits-list{
     display: flex;
-    gap: 24px;
+    flex-wrap: wrap;
+    /* gap: 24px; */
+    gap: 72px;
     
 }
 .benefits-container{
-    width: 264px;
+    /* width: 264px;
     height: 112px;
     background-color: #F4F4FD;
     border: 1px solid #8E8F99;
@@ -209,10 +337,12 @@ overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: 8px; */
+    display: none;
 }
 .features-title{
-    width: calc((100% - 24px * 3) / 4);
+    /* width: calc((100% - 24px * 3) / 4); */
+    width: 100%;
 }
 .banking:hover{
     border-bottom: 1px solid #e7e9fc;
@@ -227,8 +357,8 @@ box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.1
 }
 .team{
     background-color: #F4F4FD;
-    padding-top: 120px;
-    padding-bottom: 120px;
+    padding-top: 96px;
+    padding-bottom: 48px;
 
 }
 .team-title{
@@ -243,14 +373,15 @@ box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.1
 
 .features-team{
     display: flex;
-    gap: 24px;
+    flex-wrap: wrap;
+    gap: 72px;
     
 }
 .team-list{
     background-color: #FFFFFF;
     text-align: center;
     border-radius: 0px 0px 4px 4px;
-    width: calc((100% - 24px * 3) / 4);
+    width: 100%;
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 .team-name{
@@ -283,8 +414,10 @@ box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.1
         }
 
 .portfolio{
-    padding-top: 120px;
-    padding-bottom: 120px;
+    /* padding-top: 120px;
+    padding-bottom: 120px; */
+    padding-top: 96px;
+    padding-bottom: 96px;
 }
 .features-portfolio{
     display: flex;
@@ -298,7 +431,8 @@ box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.1
    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .app-block{
-    width: calc((100% - 24px * 2) / 3);
+    /* width: calc((100% - 24px * 2) / 3); */
+    width: 100%;
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
     .app-block:hover{
@@ -327,8 +461,10 @@ overflow: hidden;
 }
 .footer{
     background-color: #2E2F42;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    /* padding-top: 100px;
+    padding-bottom: 100px; */
+    padding-top: 96px;
+    padding-bottom: 96px;
 }
 .footer-logo{
 color: #4d5ae5;
@@ -339,7 +475,8 @@ text-transform: uppercase;
 line-height: 1.17;
 letter-spacing: 0.03em;
 text-decoration: none;
-display: inline-block;
+display: block;
+text-align: center;
 margin-bottom: 16px;
 transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -350,20 +487,24 @@ transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     color: #404BBF;
 }
 .footer-text{
-    color: #FFFFFF;
-    font-weight: 500;
+    color: #F4F4FD;
+    font-weight: 400;
     font-size: 16px;
     line-height: 1.5em;
     letter-spacing: 0.02em;
-    max-width: 264px;
+    /* max-width: 264px; */
+    max-width: 288px;
     margin-bottom: 16px;
+    text-align: center;
     }
 .footer-span{
     color: #F4F4FD;
 }
 .footer-wrap{
     display: flex;
+    flex-wrap: wrap;
     align-items: baseline;
+    gap: 72px;
     }
 .background-footer:hover{
     background-color: #31D0AA;
@@ -372,11 +513,15 @@ transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     background-color: #31D0AA;
 }
 .logo-container{
-margin-right: 120px;
+/* margin-right: 120px; */
+
 }
 .team-icon-list-footer{
     display: flex;
     gap: 16px;
+}
+.footer-container{
+    
 }
 .backdrop{
     background-color: rgba(46, 47, 66, 0.4);
@@ -392,15 +537,17 @@ margin-right: 120px;
 
 .is-open{
 opacity: 1;
-    pointer-events: auto;
-    visibility: visible;
+pointer-events: auto;
+visibility: visible;
 }
    
   
 .modal{
     background-color: #FCFCFC;
-    width: 408px;
-    min-height: 584px;
+    /* width: 408px;
+    min-height: 584px; */
+    width: 288px;
+    min-height: 623px;
     padding-top: 80px;
     padding-left: 516px;
     border-radius: 4px;
@@ -440,17 +587,11 @@ opacity: 1;
 
 
     .modal-close:hover .modal-close-icon {
-        background-color: #404BBF;
-        border: none;
-        fill: #FFFFFF;
-              
+        fill: #FFFFFF;      
     }
     .modal-close:focus .modal-close-icon {
-        background-color: #404BBF;
-        border: none;
         fill: #FFFFFF;
-        
-    }
+        }
     .modal-close-icon{
     fill: #2E2F42; 
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -464,7 +605,8 @@ opacity: 1;
     line-height: 1.5em;
     letter-spacing: 0.02em;
     text-align: center;
-    max-width: 360px;
+    /* max-width: 360px; */
+    max-width: 256px;
     margin-bottom: 16px;
     }
     .modal-field{
@@ -480,7 +622,8 @@ opacity: 1;
     }
  .modal-input{
     height: 40px;
-    padding-left: 38px;
+    /* padding-left: 38px; */
+    padding-left: 34px;
     }
      .modal-input:focus{
         border-color: #4D5AE5;
@@ -578,7 +721,8 @@ fill: #F4F4FD;
  }
  .footer-form{
    display: flex;
-   gap: 24px;
+   flex-wrap: wrap;
+   gap: 16px;
    }
  .footer-container{
     
@@ -596,10 +740,12 @@ margin-bottom: 4px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #ffffff;
+    text-align: center;
  }
  .footer-input{
     margin-right: 24px;
-    width: 264px;
+    /* width: 264px; */
+    width: 288px;
     height: 40px;
     border: 1px solid #ffffff;
     border-radius: 4px;
@@ -623,7 +769,6 @@ color: #FFFFFF;
     .footer-button{
         min-width: 165px;
         height: 40px;
-        padding-left: 24px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -650,5 +795,214 @@ color: #FFFFFF;
         margin-bottom: 16px;
     }
     .social-container{
+        /* margin-right: 80px; */
+        margin: 0 auto;
+    }
+    @media screen and (min-width:768px){
+        .container{
+            max-width: 768px;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+        .benefits{
+    padding-top: 96px;
+    padding-bottom: 96px;
+}
+.benefits-list{
+    gap: 72px 24px;
+    
+}
+
+.features-title{
+    width: calc(( 100% - 24px ) / 2);
+   }
+   .features-team{
+    gap: 64px 24px;
+   }
+   .team-list{
+    width: calc(( 100% - 24px ) / 2);
+   }
+   .team .container{
+   max-width: 576px;
+   }
+   .footer .container{
+    /* max-width: 576px; */
+   }
+   .app-block{
+    width: calc((100% - 24px) / 2);
+}
+.features-portfolio{
+   gap: 72px 24px;
+}
+.main-title{
+    margin-bottom: 36px;
+    font-size: 56px;
+    line-height: 1.07;
+    max-width: 496px;
+}
+.main{
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/office-tab.jpg);
+}
+.footer-form{
+   display: flex;
+   flex-wrap: wrap;
+   gap: 24px;
+   }
+   .logo-container{
+/* margin-right: 24px; */
+margin-left: 108px;
+}
+.footer-text{
+    max-width: 264px;
+    text-align: unset;
+}
+.footer-input{
+    width: 264px;
+}
+ .footer-description{
+    text-align: unset;
+ }
+ .footer-logo{
+    display: flex;
+ }
+ .footer-wrap{
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
+
+    column-gap: 24px;
+    }
+ .social-container{
+        /* margin-right: 164px; */
+        
+    }
+    .footer-container{
+        margin-left: 108px;
+    }
+    .modal{
+        width: 408px;
+    min-height: 584px;
+    }
+    .modal-title{
+        max-width: 360px;
+    }
+@media screen and (min-resolution: 2x){
+    .main{
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/office-tab-2x.jpg);
+    }
+}
+.header-logo{
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+    }
+       @media screen and (min-width:1158px){
+        .container, .team .container{
+    max-width: 1158px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+        }
+        .benefits{
+    padding-top: 96px;
+    padding-bottom: 96px;
+}
+.benefits-container{
+    display: flex;
+    width: 264px;
+    height: 112px;
+    background-color: #F4F4FD;
+    border: 1px solid #8E8F99;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+}
+.benefits-list{
+    gap: 24px;
+    
+}
+.features-title{
+    width: calc((100% - 24px * 3) / 4);
+   }
+   .team{
+padding-top: 120px;
+padding-bottom: 120px;
+   }
+  
+    .features-team{
+    gap: 24px;
+   }
+   .team-list{
+    width: calc((100% - 24px * 3) / 4);
+    }
+    .portfolio{
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+.app-block{
+    width: calc((100% - 24px * 2) / 3);
+}
+.features-portfolio{
+   gap: 48px 24px;
+}
+.main-title{
+    margin-bottom: 48px;
+}
+.main{
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/office.jpg);
+}
+.footer-form{
+   display: flex;
+   flex-wrap: wrap;
+   gap: 24px;
+   }
+   .logo-container{
+margin-right: 120px;
+}
+.footer-wrap{
+    display: flex;
+    
+}
+.footer-text{
+    max-width: 264px;
+    text-align: unset;
+}
+.footer{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.footer-input{
+    width: 264px;
+}
+ .footer-description{
+    text-align: unset;
+ }
+  .social-container{
         margin-right: 80px;
     }
+    .logo-container{
+        margin-right: 120px;
+    }
+     .modal{
+        width: 408px;
+    min-height: 584px;
+    }
+    .modal-title{
+        max-width: 360px;
+    }
+    .modal-input{
+        padding-left: 38px;
+    }
+@media screen and (min-resolution: 2x){
+    .main{
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/office-2x.jpg);
+    }
+}
+    }
+    .mob-close-icon{
+    fill: #2E2F42; 
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}

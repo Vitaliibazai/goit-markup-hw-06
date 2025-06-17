@@ -804,6 +804,16 @@ color: #FFFFFF;
             padding-left: 16px;
             padding-right: 16px;
         }
+        .header-nav{
+            display: flex;
+        }
+        .contacts{
+            display: flex;
+            flex-direction: column;
+            padding-right: 16px;
+            gap: 12px;
+        }
+        
         .benefits{
     padding-top: 96px;
     padding-bottom: 96px;
@@ -886,6 +896,9 @@ justify-content: flex-start;
     .modal-title{
         max-width: 360px;
     }
+    .menu-open-btn{
+        visibility: hidden;
+    }
 @media screen and (min-resolution: 2x){
     .main{
         background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/office-tab-2x.jpg);
@@ -903,6 +916,14 @@ justify-content: flex-start;
     padding-left: 15px;
     padding-right: 15px;
     margin: 0 auto;
+        }
+        .header-nav{
+            display: flex;
+        }
+        .contacts{
+            display: flex;
+            flex-direction: unset;
+            gap: 40px;
         }
         .benefits{
     padding-top: 96px;
